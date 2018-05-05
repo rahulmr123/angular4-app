@@ -21,20 +21,11 @@ export class AppComponent {
     })
 this.fetched.subscribe((data)=>{
   console.log(data);
-  this.setUserData(data);
+  this.myService.setUserData(data);
 })
   }
 ngOnInit(){
 this.date=this.myService.showDate();
-}
-setUserData(data){
-  console.log(data,"hhhhhhhhhhh")
-  if(data.length>0){
-    this.fetched=true;
-  }
-  this.myService.fetchedData =data;
-  this.fetched=data;
-  console.log("jjjjjjjj",this.myService.fetchedData)
 }
 
 }
